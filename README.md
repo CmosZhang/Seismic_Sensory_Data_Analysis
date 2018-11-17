@@ -9,14 +9,13 @@ When tubal-rank is 32, we can get a good approximation result. <br>
 
 
 **The CDF of singular values for the seismic data, compared with processed data.**
-![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Data_preprocessing/原始数据与预处理数据的CDF图对比.png)
-
+![](https://github.com/CmosZhang/Seismic_Sensory_Data_Analysis/blob/master/Data_preprocessing/原始数据与预处理数据的CDF图对比.png)
 
 **Original data.**
-![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Data_preprocessing/original_data.png)
+![](https://github.com/CmosZhang/Seismic_Sensory_Data_Analysis/blob/master/Data_preprocessing/original_data.png)
 
 **Processed data.**
-![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Data_preprocessing/tubal_rank_32_approximate_data.png)
+![](https://github.com/CmosZhang/Seismic_Sensory_Data_Analysis/blob/master/Data_preprocessing/tubal_rank_32_approximate_data.png)
 
 These figures are obtained by running the test_r_error.m in the Data_preprocessing folder.
 
@@ -28,7 +27,7 @@ The result of TNN algorithm and Tubal-Alt-Min algorithm:
 --
 **data size: t * m * n: 300 * 120 * 80, tubal-rank:15.**<br>
 **RSE of TNN:6.1e-03. RSE of Tubal-Alt-Min:1.56e-02.**<br>
-![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Result/slicemissingrecovery.png)
+![](https://github.com/CmosZhang/Seismic_Sensory_Data_Analysis/blob/master/Result/slicemissingrecovery.png)
 
 (a) Slice view of the original complete data. <br>
 (b) Slice view of reconstructed data using TNN. <br>
@@ -38,7 +37,7 @@ run Tubal_Alt_Min.m to get the result.
 
 The reconstruction error of TNN algorithm and Tubal-Alt-Min algorithm:
 --
-![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Result/error_v3.png)
+![](https://github.com/CmosZhang/Seismic_Sensory_Data_Analysis/blob/master/Result/error_v3.png)
 
 The figure shows the RSE of the Tubal-Alt-Min algorithm and TNN algorithm for varying frontal slice sampling rates from 80% to 98%.<br>
 
@@ -72,18 +71,18 @@ Tubal_Alt_Min algorithm result and TNN algorithm result:
 **Tubal_Alt_Min RSE = 1.289423e-15.TNN RSE = 1.475729e-04．**<br>
 
 corrupted data<br>
-![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Result/Corrupted_data.png)
+![](https://github.com/CmosZhang/Seismic_Sensory_Data_Analysis/blob/master/Result/Corrupted_data.png)
 
 Tubal_Alt_Min recovery data<br>
-![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Result/Tubal_Recovery_data.png)
+![](https://github.com/CmosZhang/Seismic_Sensory_Data_Analysis/blob/master/Result/Tubal_Recovery_data.png)
 
 TNN recovery data<br>
-![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Result/TNN_recovery_data.png)
+![](https://github.com/CmosZhang/Seismic_Sensory_Data_Analysis/blob/master/Result/TNN_recovery_data.png)
 
 run Tubal_Alt_Min_TNN_tubal_sampling.m to get the result.<br>
 
 reconstruction error (RSE) under different tubal sampling rates:<br>
-![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Result/tubal_sampling_error.png)
+![](https://github.com/CmosZhang/Seismic_Sensory_Data_Analysis/blob/master/Result/tubal_sampling_error.png)
 
 run tubal_sampling_error.m to get the result.<br>
 
@@ -92,7 +91,7 @@ GCG algorithm result：
 --
 **GCG RSE:4.907527e-03.**<br>
 GCG recovery data<br>
-![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/GCGalgorithm/Result/Recovery_data.png)
+![](https://github.com/CmosZhang/Seismic_Sensory_Data_Analysis/blob/master/GCGalgorithm/Result/Recovery_data.png)
 
 run gcgexample.m in the GCGalgorithm folder to get the result.<br>
 

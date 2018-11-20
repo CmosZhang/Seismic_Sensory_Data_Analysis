@@ -3,13 +3,13 @@ clear all;
 close all;
 
 %% data loading
-load('volume.mat');  %Êı¾İ´óĞ¡£º326*431*531
+load('volume.mat');  %æ•°æ®å¤§å°ï¼š326*431*531
 T = volume(:,:,:);
-% load('T_synthetic_tuabl_rank_2.mat');%T = T(:, :, 1:256);   %¼ÓÔØÎÒÃÇ×Ô¼ººÏ³ÉµÄÈË¹¤ºÏ³ÉÊı¾İ;
+% load('T_synthetic_tubal_rank_2.mat');%T = T(:, :, 1:256);   %åŠ è½½æˆ‘ä»¬è‡ªå·±åˆæˆçš„äººå·¥åˆæˆæ•°æ®;
 
 [tubalRank,CDF1] = LowTubalCDF(T, 1);
 
-[U,S,V] = tSVDs(T,32); % µ÷½ÚtSVDs(½Ø¶Ïtensor SVD·Ö½âµÄÖÈ£¬À´¿´Îó²î)
+[U,S,V] = tSVDs(T,32); % è°ƒèŠ‚tSVDs(æˆªæ–­tensor SVDåˆ†è§£çš„ç§©ï¼Œæ¥çœ‹è¯¯å·®)
 
 temp = tprod(U,S);
 T_test = tprod(temp,V);

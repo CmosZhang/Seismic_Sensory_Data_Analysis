@@ -4,10 +4,7 @@ close all;
 
 
 %% data loading
-load('T_synthetic_tuabl_rank_2.mat');   %¼ÓÔØÎÒÃÇ×Ô¼ººÏ³ÉµÄÈË¹¤ºÏ³ÉÊı¾İ;
-% load('T_synthetic_tuabl_rank_3.mat');   %¼ÓÔØÎÒÃÇ×Ô¼ººÏ³ÉµÄÈË¹¤ºÏ³ÉÊı¾İ;
-% load('traces_100_100_1000.mat');      %¼ÓÔØÕæÊµµØÕğÊı¾İ
-% load('05HBC3D_ALL_POST_MIG_200_25_601_T.mat');  %¼ÓÔØÕæÊµµØÕğÊı¾İ
+load('T_synthetic_tubal_rank_2.mat');   %åŠ è½½æˆ‘ä»¬è‡ªå·±åˆæˆçš„äººå·¥åˆæˆæ•°æ®;
 
 
  

@@ -4,13 +4,13 @@ close all;
 
 
 %% data loading
-% load('T_synthetic_tuabl_rank_2.mat'); %¼ÓÔØÎÒÃÇ×Ô¼ººÏ³ÉµÄÈË¹¤ºÏ³ÉÊı¾İ;
+% load('T_synthetic_tubal_rank_2.mat'); %åŠ è½½æˆ‘ä»¬è‡ªå·±åˆæˆçš„äººå·¥åˆæˆæ•°æ®;
 % T = T(1:60,1:60,1:100);
-load('volume.mat');  %Êı¾İ´óĞ¡£º326*431*531
+load('volume.mat');  %æ•°æ®å¤§å°ï¼š326*431*531
 volume = volume(1:300,1:180,1:80);
 
 
-%% Êı¾İÔ¤´¦Àí
+%% æ•°æ®é¢„å¤„ç†
 original_tubalRank = LowTubalCDF(volume,1);
 [U,S,V] = tSVDs(volume,18);
 temp = tprod(U,S);
@@ -21,7 +21,7 @@ original_tubalRank1 = LowTubalCDF(T_test,1);
 T1 = T_test;
 
 
-%% µ÷½ÚÖÈ
+%% è°ƒèŠ‚ç§©
 r = 18;
 
 %% Slice sampling
@@ -37,7 +37,7 @@ end
 
 
 %% 5-th frontal slice missing  
-%×îÖÕ»­Í¼»­µÚÎå¸öslice,µÚÎå¸öÃæÈ±Ê§Ö÷ÒªÊÇÎªÁË»­Í¼·½±ã
+%æœ€ç»ˆç”»å›¾ç”»ç¬¬äº”ä¸ªslice,ç¬¬äº”ä¸ªé¢ç¼ºå¤±ä¸»è¦æ˜¯ä¸ºäº†ç”»å›¾æ–¹ä¾¿
 omega(:,:,5)=zeros(szT1(1),szT1(2));
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -70,7 +70,7 @@ for i = 1: k
      omega_f_trans(:,:,i) = omega_f(:,:,i)';
 end
 
-% ¿¼ÂÇÔö¼Óµü´ú´ÎÊı¡£
+% è€ƒè™‘å¢åŠ è¿­ä»£æ¬¡æ•°ã€‚
 maxiter = 25;
 iter=1;
 while iter <= maxiter
@@ -119,7 +119,7 @@ TNNRSE =  norm(tnnT(:) - T1(:)) / norm(T1(:));
 fprintf('***********************TNNRSE = %d ***********\n',TNNRSE); 
    
 
-% figure »­µÚÎå¸öslice¡£
+% figure ç”»ç¬¬äº”ä¸ªsliceã€‚
 figure;
 subplot(1,3,1);
 SeisPlot(squeeze(T(:,:, 5))',{'figure', 'old'});

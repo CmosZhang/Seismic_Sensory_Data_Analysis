@@ -5,12 +5,12 @@ close all;
 
 
 %% data loading
-% load('T_synthetic_tuabl_rank_2.mat');% T = T(:, :, 1:256);   %¼ÓÔØÎÒÃÇ×Ô¼ººÏ³ÉµÄÈË¹¤ºÏ³ÉÊı¾İ;
-load('volume.mat');  %Êı¾İ´óĞ¡£º326*431*531
+% load('T_synthetic_tubal_rank_2.mat');% T = T(:, :, 1:256);   %åŠ è½½æˆ‘ä»¬è‡ªå·±åˆæˆçš„äººå·¥åˆæˆæ•°æ®;
+load('volume.mat');  %æ•°æ®å¤§å°ï¼š326*431*531
 volume = volume(1:300,1:120,1:80);
 
 
-%% Êı¾İÔ¤´¦Àí
+%% æ•°æ®é¢„å¤„ç†
 original_tubalRank = LowTubalCDF(volume,1);
 [U,S,V] = tSVDs(volume,15);
 temp = tprod(U,S);
@@ -24,7 +24,7 @@ srs = [0.01 : 0.01 : 0.1];
 sampling_rse = zeros(1, length(srs));
 
 
-%% µ÷½Útubal-rank
+%% è°ƒèŠ‚tubal-rank
 r = 15;
 
 
@@ -94,7 +94,7 @@ end
 end
 sampling_rse = sampling_rse ./ 10;
 
-% ÖØ¹¹Îó²î
+% é‡æ„è¯¯å·®
 figure;semilogy([0.01 : 0.01 : 0.1]*100, sampling_rse(1,:), '+-'); title(['Reconstruction Error']);
 legend( 'Tubal-Alt-Min'); 
 xlabel('Slice Missing Rate %');ylabel('RSE');

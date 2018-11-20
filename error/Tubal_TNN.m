@@ -7,7 +7,7 @@ close all;
 % load('T_synthetic_tubal_rank_2.mat');   %加载我们自己合成的人工合成数据;
 load('volume.mat');  %数据大小：326*431*531
 T = volume(1:300,1:120,1:80);
-% T = permute(T,[3,1,2]);
+
 
 %% 数据预处理
 original_tubalRank = LowTubalCDF(T,1);

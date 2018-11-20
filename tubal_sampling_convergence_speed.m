@@ -4,9 +4,8 @@ close all;
 
 
 %% data loading
-load('T_synthetic_tuabl_rank_2.mat');   %¼ÓÔØÎÒÃÇ×Ô¼ººÏ³ÉµÄÈË¹¤ºÏ³ÉÊı¾İ;
-% load('T_synthetic_tuabl_rank_3.mat');   %¼ÓÔØÎÒÃÇ×Ô¼ººÏ³ÉµÄÈË¹¤ºÏ³ÉÊı¾İ;
-% load('traces_100_100_1000.mat');     %¼ÓÔØÕæÊµµØÕğÊı¾İ
+load('T_synthetic_tubal_rank_2.mat');   %åŠ è½½æˆ‘ä»¬è‡ªå·±åˆæˆçš„äººå·¥åˆæˆæ•°æ®;
+
 
 % %% synthetic data
 % m   = 60;    % the tensor is m * n * k
@@ -112,7 +111,7 @@ end
 fprintf('***********************Tubal_Alt_MinRSE = %d ***********\n',Tubal_Alt_Min_RSE);  
 
 
-%% »æÖÆÊÕÁ²ËÙ¶È
+%% ç»˜åˆ¶æ”¶æ•›é€Ÿåº¦
 len = min([length(TubalAMCurve), length(tnnCurve)]);
 figure;semilogy(TubalAMCurve(1:len), 'o-'); title(['Convergence Speed ']);
 hold on; semilogy(tnnCurve(1:len), '*-');

@@ -3,10 +3,7 @@ clear all;
 close all;
 
 %% data loading
-load('T_synthetic_tuabl_rank_2.mat');  %¼ÓÔØÎÒÃÇ×Ô¼ººÏ³ÉµÄÈË¹¤ºÏ³ÉÊı¾İ;
-% load('T_synthetic_tuabl_rank_3.mat'); %¼ÓÔØÎÒÃÇ×Ô¼ººÏ³ÉµÄÈË¹¤ºÏ³ÉÊı¾İ;
-% load('traces_100_100_1000.mat');     %¼ÓÔØÕæÊµµØÕğÊı¾İ
-
+load('T_synthetic_tubal_rank_2.mat');  %åŠ è½½æˆ‘ä»¬è‡ªå·±åˆæˆçš„äººå·¥åˆæˆæ•°æ®;
 
 tubalRank = LowTubalCDF(T, 1);
 r = tubalRank;
@@ -23,11 +20,9 @@ for loop = 1 : length(srs)
  %% data sampling 
  szT = size(T);
  omega = repmat((rand(szT(1:2)) > samplingRate), [1, 1, szT(3)]);
-
-
-  T1 = T;
-  T1((omega)) = 0; 
-  omega = abs(1 - omega);
+ T1 = T;
+ T1((omega)) = 0; 
+ omega = abs(1 - omega);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                    Tubal-Alt-Min                         %
@@ -114,7 +109,7 @@ end
 end
 sampling_rse = sampling_rse ./ 10;
 
-% % »æÖÆÊÕÁ²ËÙ¶È
+% % ç»˜åˆ¶æ”¶æ•›é€Ÿåº¦
 % len = min([length(TubalAMCurve), length(tnnCurve)]);
 % figure;semilogy(TubalAMCurve(1:len), 'o-'); title(['Convergence Speed ']);
 % hold on; semilogy(tnnCurve(1:len), '*-');
@@ -122,7 +117,7 @@ sampling_rse = sampling_rse ./ 10;
 % xlabel('Iteration');ylabel('RSE in log-scale');
 % grid on;
 
-%% ÖØ¹¹Îó²î
+%% é‡æ„è¯¯å·®
 figure;semilogy([0.05:0.05:0.95]*100, sampling_rse(1,:), '+-'); title(['Reconstruction Error']);
 hold on; semilogy([0.05:0.05:0.95]*100, sampling_rse(2, :), '*-');
 legend( 'Tubal-Alt-Min', 'TNN'); 

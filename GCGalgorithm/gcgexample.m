@@ -3,19 +3,16 @@ clear all;
 close all;
 
 %% data loading
-load('T_synthetic_tuabl_rank_2.mat');
-% load('T_synthetic_tuabl_rank_3.mat');
-% load('T_synthetic_tuabl_rank_3_30_30_600.mat');
-% load('T_synthetic_tuabl_rank_3_32_32_300.mat');
-% load('traces_100_100_1000.mat'); 
+load('T_synthetic_tubal_rank_2.mat');
 
 
-szT = size(T);                %Ô­Ê¼Êı¾İ´óĞ¡ 
+
+szT = size(T);                %åŸå§‹æ•°æ®å¤§å° 
 tubalRank = LowTubalCDF(T, 1);
 
 %% add noise
-% T1 = generatedata (T,10);  %¼Ó10dBµÄÔëÉù
-T1 = T;  %²»¼ÓÔëÉù
+% T1 = generatedata (T,10);  %åŠ 10dBçš„å™ªå£°
+T1 = T;  %ä¸åŠ å™ªå£°
 
 
 %% data sampling (tubal-sampling)
@@ -26,11 +23,11 @@ T2 = T1;
 T2(Omega) = 0; 
 Omega = abs(1 - Omega);
 
-%% DCT ±ä»»
+%% DCT å˜æ¢
 T2_d = tensordct2(T2);
 
 %% GCG algorithm
-lambda = 0.1; %Ä¿±êº¯ÊıÖĞµÄ²ÎÊı
+lambda = 0.1; %ç›®æ ‡å‡½æ•°ä¸­çš„å‚æ•°
 [~,~,c]=size(T2_d);
 for i=1:c
     A = T2_d(:,:,i);
@@ -46,7 +43,7 @@ for i=1:c
 end
   
 
-%% ÄæDCT±ä»»
+%% é€†DCTå˜æ¢
 r_T = tensoridct2(T3);
 
 %% figure
